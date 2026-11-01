@@ -47,7 +47,9 @@ Stop the development instance with `docker compose stop homeassistant`. Its conf
 
 Recorded replies from a Sony XBR-65A8H running Android 10 cover TiviMate, YouTube and Angel. Integration tests replay these replies through the packaged library and actual Home Assistant entities. Power flags come from the captures; volume inputs are synthetic. Config-flow loading, options, entity IDs, reloads and recovery from a simulated ADB disconnect are checked separately.
 
-The backend has also been tested against the physical TV and its full test suite runs on Linux with Python 3.14. This does not establish a completed live Home Assistant trial.
+A live trial through Home Assistant 2026.10.4 on Linux ARM64 checked the same three Sony apps, volume and mute, standby/wake, configuration-entry reloads and a full development-instance restart. Connections reopened without another ADB approval, and all four media-player and remote entity registry records stayed unchanged. See [test scope and results](docs/testing.md).
+
+A Google TV Streamer running Android 14 was also checked. TiviMate pause/resume and standby/wake worked. YouTube remained `idle` during playback in both this integration and the original library. Its named media-session states are not parsed by the existing shared parser. Streamer volume and mute requests also did not change the reported HDMI stream values.
 
 Audio-player data cannot reliably distinguish buffering from a deliberate pause. Netflix and Prime Video playback have not been tested.
 
