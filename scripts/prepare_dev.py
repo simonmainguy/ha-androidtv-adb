@@ -21,6 +21,9 @@ if not data.is_absolute():
 data.mkdir(parents=True, exist_ok=True)
 (data / "custom_components").mkdir(exist_ok=True)
 target = data / "configuration.yaml"
-if not target.exists():
+if target.exists() and not target.is_file():
+    raise SystemExit(f"Development configuration must be a file: {target}")
+# Docker can leave an empty mount target after an interrupted first start.
+if not target.exists() or target.stat().st_size == 0:
     shutil.copyfile(ROOT / "development/configuration.yaml", target)
 print(f"Development data: {data}")
