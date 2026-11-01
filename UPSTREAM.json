@@ -1,6 +1,6 @@
 {
   "androidtv": {
-    "commit": "590771823582436618902b13397692d545535393",
+    "commit": "b8a2f4f0ec1b1f0e6ed2811988df4fa3d297b6a6",
     "repository": "simonmainguy/python-androidtv"
   },
   "files": {
@@ -102,9 +102,9 @@
     },
     "custom_components/androidtv/_androidtv/constants.py": {
       "origin": "library",
-      "sha256": "c264c60aa007a04cac09ae8073259df405276c5df7f8cc79f8ad0c5914872d74",
+      "sha256": "e89ce7beb39672e5087d021deafb22c61c446c6ba92f9bcdcf91ac6e57e98dd5",
       "source_path": "androidtv/constants.py",
-      "source_sha256": "c264c60aa007a04cac09ae8073259df405276c5df7f8cc79f8ad0c5914872d74"
+      "source_sha256": "e89ce7beb39672e5087d021deafb22c61c446c6ba92f9bcdcf91ac6e57e98dd5"
     },
     "custom_components/androidtv/_androidtv/exceptions.py": {
       "origin": "library",
@@ -174,7 +174,7 @@
     },
     "custom_components/androidtv/manifest.json": {
       "origin": "ha",
-      "sha256": "c8999d4e8744a55399cb12199d9783cf6d3579b659dc169c8f1125425df8dfdb",
+      "sha256": "b71ddd8cb124e651fa49bb07857845e1d129b69f86e652bd8fde3dbeae082d28",
       "source_path": "homeassistant/components/androidtv/manifest.json",
       "source_sha256": "c7b6412039ee1bc6c6fa2b4d61378393d05a192f15f3a4aaf6c948824dd719a8"
     },
@@ -213,6 +213,12 @@
       "sha256": "bdd3e6bc0fbe21ff254f9191a3b1b2dab16942b22fe244580c23d5749d63604d",
       "source_path": "fr",
       "source_sha256": "bdd3e6bc0fbe21ff254f9191a3b1b2dab16942b22fe244580c23d5749d63604d"
+    },
+    "tests/fixtures/google_tv_playback.json": {
+      "origin": "fixture",
+      "sha256": "3046edd4deacf4fc91f80d5acf0fedbec91baa4cc5fdf3255bf9931ae593227b",
+      "source_path": "tests/fixtures/google_tv_playback.json",
+      "source_sha256": "3046edd4deacf4fc91f80d5acf0fedbec91baa4cc5fdf3255bf9931ae593227b"
     },
     "tests/fixtures/sony_android10.json": {
       "origin": "fixture",

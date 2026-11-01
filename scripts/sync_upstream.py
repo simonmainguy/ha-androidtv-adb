@@ -13,12 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 COMPONENT = Path("custom_components/androidtv")
 HA_VERSION = "2026.10.4"
 HA_COMMIT = "357cae5c598dfcd7a0ea7dc5b1facccd4ec6037b"
-LIBRARY_COMMIT = "590771823582436618902b13397692d545535393"
+LIBRARY_COMMIT = "b8a2f4f0ec1b1f0e6ed2811988df4fa3d297b6a6"
 IMAGE = (
     "ghcr.io/home-assistant/home-assistant:2026.10.4"
     "@sha256:23f4dfbb69ce76315dbc4de7915504f1c2dcecd7ca2648113a493a385972e133"
 )
-VERSION = "0.1.0b1"
+VERSION = "0.1.0b2"
 REPOSITORY_URL = "https://github.com/simonmainguy/ha-androidtv-adb"
 HA_FILES = (
     "__init__.py",
@@ -102,6 +102,7 @@ def sync(library_repo, docker):
         "sony_android10.json",
         "sony_android10_audio.json",
         "sony_android10_playback.json",
+        "google_tv_playback.json",
     ):
         tasks.append(("fixture", name))
 

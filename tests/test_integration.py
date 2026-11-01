@@ -101,6 +101,13 @@ class RecordedADB:
 class IntegrationTests(unittest.IsolatedAsyncioTestCase):
     """Load the custom component through HA and exercise its normal update path."""
 
+    device_properties = {
+        "manufacturer": "Sony",
+        "model": "BRAVIA 4K UR3",
+        "sw_version": "10",
+        "ethmac": "02:00:00:00:00:01",
+    }
+
     async def asyncSetUp(self):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
@@ -167,12 +174,7 @@ class IntegrationTests(unittest.IsolatedAsyncioTestCase):
             port=config["port"],
             state_detection_rules=state_detection_rules,
         )
-        self.tv.device_properties = {
-            "manufacturer": "Sony",
-            "model": "BRAVIA 4K UR3",
-            "sw_version": "10",
-            "ethmac": "02:00:00:00:00:01",
-        }
+        self.tv.device_properties = dict(self.device_properties)
         self.tv.max_volume = 100
         self.transport = RecordedADB(self.sample)
         self.tv._adb = self.transport
@@ -209,6 +211,27 @@ class IntegrationTests(unittest.IsolatedAsyncioTestCase):
                 if sample["screen_on"] and sample["awake"]:
                     self.assertEqual(state.attributes["is_volume_muted"], self.muted)
                     self.assertEqual(state.attributes["volume_level"], 0.1)
+
+    async def test_recorded_google_tv_sessions_reach_ha_states(self):
+        samples = json.loads(
+            (ROOT / "tests/fixtures/google_tv_playback.json").read_text()
+        )["samples"]
+        self.device_properties = {
+            "manufacturer": "Google",
+            "model": "Google TV Streamer",
+            "sw_version": "14",
+            "ethmac": "02:00:00:00:00:01",
+        }
+        self.sample = samples["youtube_play"]
+        self.assertTrue(
+            await self.hass.config_entries.async_reload(self.entry.entry_id)
+        )
+        await self.hass.async_block_till_done()
+        for name, sample in samples.items():
+            with self.subTest(capture=name):
+                state = await self.refresh(sample)
+                self.assertEqual(state.state, sample["expected_state"])
+                self.assertEqual(state.attributes["app_id"], sample["expected_app"])
 
     async def test_transport_failure_recovers_on_next_poll(self):
         self.transport.failure = ConnectionResetError("Simulated ADB disconnect")

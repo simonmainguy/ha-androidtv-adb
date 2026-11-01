@@ -1,6 +1,6 @@
 # Android TV ADB for Home Assistant
 
-A custom version of Home Assistant's Android Debug Bridge integration with playback detection fixes for Sony TVs running Android 10.
+A custom version of Home Assistant's Android Debug Bridge integration with playback detection fixes for Sony Android 10 TVs and support for named Android media-session states.
 
 This is an early development version based on Home Assistant Core 2026.10.4.
 
@@ -9,6 +9,7 @@ This is an early development version based on Home Assistant Core 2026.10.4.
 - Recover the foreground app when Sony's window-focus fields are empty.
 - Read the foreground app's current media audio players.
 - Match media-session data to the exact app and ignore failed or incomplete replies.
+- Read both numeric session states and named states such as `PLAYING(3)` and `PAUSED(2)`.
 
 The detection is shared across apps. Existing custom commands and state-detection rules retain their priority.
 
@@ -45,11 +46,11 @@ Stop the development instance with `docker compose stop homeassistant`. Its conf
 
 ## Testing
 
-Recorded replies from a Sony XBR-65A8H running Android 10 cover TiviMate, YouTube and Angel. Integration tests replay these replies through the packaged library and actual Home Assistant entities. Power flags come from the captures; volume inputs are synthetic. Config-flow loading, options, entity IDs, reloads and recovery from a simulated ADB disconnect are checked separately.
+Recorded replies from a Sony XBR-65A8H running Android 10 cover TiviMate, YouTube and Angel. Google TV Streamer Android 14 captures cover YouTube play, pause, resume and menus. Integration tests replay these replies through the packaged library and actual Home Assistant entities. Power flags come from the captures; volume inputs are synthetic. Config-flow loading, options, entity IDs, reloads and recovery from a simulated ADB disconnect are checked separately.
 
-A live trial through Home Assistant 2026.10.4 on Linux ARM64 checked the same three Sony apps, volume and mute, standby/wake, configuration-entry reloads and a full development-instance restart. Connections reopened without another ADB approval, and all four media-player and remote entity registry records stayed unchanged. See [test scope and results](docs/testing.md).
+The initial live trial through Home Assistant 2026.10.4 on Linux ARM64 checked the same three Sony apps, volume and mute, standby/wake, configuration-entry reloads and a full development-instance restart. Connections reopened without another ADB approval, and all four media-player and remote entity registry records stayed unchanged. See [test scope and results](docs/testing.md).
 
-A Google TV Streamer running Android 14 was also checked. TiviMate pause/resume and standby/wake worked. YouTube remained `idle` during playback in both this integration and the original library. Its named media-session states are not parsed by the existing shared parser. Streamer volume and mute requests also did not change the reported HDMI stream values.
+The Google TV Streamer trial initially exposed a YouTube parsing problem shared with the original library. Version `0.1.0b2` fixes the shared parser. The follow-up live trial confirmed YouTube play/pause/resume and menu states, plus TiviMate pause/resume observed through the development instance's periodic polling. The HDMI stream volume/mute limitation noted in the initial trial is separate from this playback fix.
 
 Audio-player data cannot reliably distinguish buffering from a deliberate pause. Netflix and Prime Video playback have not been tested.
 

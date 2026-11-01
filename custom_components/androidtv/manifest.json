@@ -19,5 +19,5 @@
     "async-timeout==4.0.3",
     "pure-python-adb==0.3.0.dev0"
   ],
-  "version": "0.1.0b1"
+  "version": "0.1.0b2"
 }
