@@ -27,7 +27,7 @@ A controlled trial on 2026-11-01 used the packaged integration in the separate M
 
 During the initial trial, the Streamer's media-session replies used named states such as `PLAYING(3)` and `PAUSED(2)`. Both the installed original library and the 0.1.0b1 backend failed to parse those values. Their non-Sony query strings and session-state regular expressions were identical. That finding prompted the follow-up below.
 
-TV power and reported volume settings were restored after testing, along with the living-room lighting settings. No custom integration was installed on the main instance. Private addresses, ADB keys, credentials and raw UI captures are not included in this repository.
+TV power and reported volume settings were restored after testing, along with the living-room lighting settings. At this stage, no custom integration had been installed on the main instance. Private addresses, ADB keys, credentials and raw UI captures are not included in this repository.
 
 ## Named media-session states (0.1.0b2)
 
@@ -37,10 +37,24 @@ The new Google TV replay failed for playing, paused and resumed states with the 
 
 A follow-up live trial on the Google TV Streamer verified YouTube play, pause, resume and return to an idle menu. YouTube controls used the development instance's normal Home Assistant service/update path. A separate TiviMate pause/resume cycle used an external controller while the development instance made state reads only, confirming that its periodic polling picked up both transitions. The 0.1.0b1-to-0.1.0b2 development restart retained ADB authorization and all four media-player/remote entity registry records.
 
-The Kitchen TV's own integration supplied temporary mute during these tests. Its original power, volume and mute settings were restored afterward. The main instance still uses the original integration and existing automations. The earlier HDMI stream volume limitation is separate from this parser change.
+The Kitchen TV's own integration supplied temporary mute during these tests. Its original power, volume and mute settings were restored afterward. At that stage, the main instance still used the original integration and existing automations. The earlier HDMI stream volume limitation is separate from this parser change.
 
-## Before installing on the main instance
+## Production trial (0.1.0b2)
 
-The separate-instance trial is complete within the scope above. A live upgrade of existing production entries has not been tested. Save a backup before that installation, compare the existing entity IDs and saved options afterward, and observe normal use before retiring an existing playback detector. Reopening ADB connections was tested through reloads and restart; unexpected network-loss recovery remains covered by the simulated-disconnect tests.
+A production trial on 2026-11-01 installed the custom component through HACS on Home Assistant OS 18.4, running Core 2026.10.4 and Python 3.14.9 on AMD64. A full backup, including the recorder database, was saved and verified before installation. All 35 deployed runtime files matched commit `2156946352d5803c666562d80a280d9a0f41da06` byte for byte.
+
+The existing TV configuration entries were kept. After the Core restart, diagnostics identified the loaded component as custom version `0.1.0b2`. Both entries loaded without another ADB approval. All four media-player and remote entity IDs, registry IDs, unique IDs and device IDs were retained, along with saved options and the original ADB key.
+
+| Device | Checks | Result |
+| --- | --- | --- |
+| Sony XBR-65A8H, Android 10 | TiviMate and YouTube play/pause/resume; YouTube return to menu | Expected playback and idle states reached the production entity. Muted playback remained `playing`. |
+| Sony XBR-65A8H, Android 10 | Movie lighting driven directly by the ADB entity | With the previous polling detector disabled, pausing raised the lamp to 40% and resuming turned it off in both apps. Returning to an idle menu also raised the lamp. |
+| Sony XBR-65A8H, Android 10 | Volume, mute and standby/wake | Changed values were read back, original volume and mute settings were restored, and the TV returned to standby. |
+| Google TV Streamer, Android 14 | TiviMate and YouTube play/pause/resume; YouTube return to menu | Expected playback and idle states were reported. |
+| Google TV Streamer, Android 14 | Standby/wake | Both the Streamer and its connected TV reached off, then woke successfully. The Streamer's power reply also confirmed sleep. The first read during the transition was still idle. |
+
+The connected Kitchen TV's own integration supplied temporary mute; this does not establish ADB control of the HDMI stream volume. Both TVs and the lighting were restored to their pre-trial settings. The movie-lighting automation now uses the Sony ADB entity directly. The previous detector and its helper are retained for rollback, with the detector disabled. The production configuration check passed, and the system log contained no Android TV warnings or errors at the end of the trial.
+
+This validates the initial production rollout, not long-term reliability. Normal use over several days is the next check. Unexpected network-loss recovery remains covered by the simulated-disconnect tests.
 
 Buffering can pause Android's audio player. A paused player therefore does not establish that the viewer pressed Pause. These checks do not claim compatibility with every app or TV.
