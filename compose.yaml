@@ -1,0 +1,37 @@
+name: ha-androidtv-adb
+
+x-home-assistant-image: &ha-image ghcr.io/home-assistant/home-assistant:2026.10.4@sha256:23f4dfbb69ce76315dbc4de7915504f1c2dcecd7ca2648113a493a385972e133
+
+services:
+  homeassistant:
+    image: *ha-image
+    restart: "no"
+    environment:
+      TZ: America/Toronto
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8123/', timeout=5).read(1)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    ports:
+      - "127.0.0.1:${HA_DEV_PORT:-18123}:8123"
+    volumes:
+      - "${HA_DEV_DATA_DIR:-../_data/ha-androidtv-adb}:/config"
+      - "./custom_components:/config/custom_components:ro"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "2"
+
+  tests:
+    image: *ha-image
+    profiles: [test]
+    entrypoint: [python]
+    command: [-m, unittest, discover, -s, tests, -v]
+    working_dir: /work
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+    volumes:
+      - ".:/work:ro"

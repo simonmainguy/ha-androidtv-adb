@@ -1,0 +1,14 @@
+homeassistant:
+  name: ADB development
+  time_zone: America/Toronto
+  unit_system: metric
+
+http:
+frontend:
+config:
+system_health:
+
+logger:
+  default: warning
+  logs:
+    custom_components.androidtv: info

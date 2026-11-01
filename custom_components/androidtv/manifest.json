@@ -1,0 +1,23 @@
+{
+  "domain": "androidtv",
+  "name": "Android Debug Bridge",
+  "codeowners": [
+    "@simonmainguy"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/simonmainguy/ha-androidtv-adb",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/simonmainguy/ha-androidtv-adb/issues",
+  "loggers": [
+    "adb_shell",
+    "custom_components.androidtv._androidtv"
+  ],
+  "requirements": [
+    "adb-shell[async]==0.4.4",
+    "aiofiles==25.1.0",
+    "async-timeout==4.0.3",
+    "pure-python-adb==0.3.0.dev0"
+  ],
+  "version": "0.1.0b1"
+}

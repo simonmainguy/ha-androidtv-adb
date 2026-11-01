@@ -1,0 +1,10 @@
+This integration is derived from Home Assistant Core 2026.10.4.
+Original project: https://github.com/home-assistant/core
+Home Assistant code is licensed under Apache License 2.0; see LICENSE.
+
+The _androidtv directory contains python-androidtv from:
+https://github.com/simonmainguy/python-androidtv
+The original project is https://github.com/JeffLIrion/python-androidtv.
+That library is licensed under MIT; see _androidtv/LICENSE.
+
+UPSTREAM.json in the repository records the exact revisions and file hashes.

@@ -1,0 +1,242 @@
+{
+  "androidtv": {
+    "commit": "590771823582436618902b13397692d545535393",
+    "repository": "simonmainguy/python-androidtv"
+  },
+  "files": {
+    "LICENSE": {
+      "origin": "ha_license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "source_path": "LICENSE.md",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "custom_components/androidtv/LICENSE": {
+      "origin": "ha_license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "source_path": "LICENSE.md",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "custom_components/androidtv/__init__.py": {
+      "origin": "ha",
+      "sha256": "8884c4078698d9e0ddde1738a82c8a49da684f45bebe3546f2f857031d95e3f2",
+      "source_path": "homeassistant/components/androidtv/__init__.py",
+      "source_sha256": "992aa06bddc337cc34334d9985bc6e771aa88168bf642b58f9e6db57f046c0fc"
+    },
+    "custom_components/androidtv/_androidtv/LICENSE": {
+      "origin": "library_license",
+      "sha256": "785a5a1a3bab65712005802581572b57c4b519ac1676492027bd422210541464",
+      "source_path": "LICENSE",
+      "source_sha256": "785a5a1a3bab65712005802581572b57c4b519ac1676492027bd422210541464"
+    },
+    "custom_components/androidtv/_androidtv/__init__.py": {
+      "origin": "library",
+      "sha256": "f5841974b57945c2162f880b7b60108d7939f2d90b1e6b2504e8b951b196b17e",
+      "source_path": "androidtv/__init__.py",
+      "source_sha256": "f5841974b57945c2162f880b7b60108d7939f2d90b1e6b2504e8b951b196b17e"
+    },
+    "custom_components/androidtv/_androidtv/adb_manager/__init__.py": {
+      "origin": "library",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_path": "androidtv/adb_manager/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custom_components/androidtv/_androidtv/adb_manager/adb_manager_async.py": {
+      "origin": "library",
+      "sha256": "0281aca6ddebcba4c8d716c06733a63541e69140c3e3616807411ce49a9fa7f3",
+      "source_path": "androidtv/adb_manager/adb_manager_async.py",
+      "source_sha256": "0281aca6ddebcba4c8d716c06733a63541e69140c3e3616807411ce49a9fa7f3"
+    },
+    "custom_components/androidtv/_androidtv/adb_manager/adb_manager_sync.py": {
+      "origin": "library",
+      "sha256": "77523a4c6755dcec0c14678621fe793461573c508433e6519fc9fe68f4bc1db5",
+      "source_path": "androidtv/adb_manager/adb_manager_sync.py",
+      "source_sha256": "77523a4c6755dcec0c14678621fe793461573c508433e6519fc9fe68f4bc1db5"
+    },
+    "custom_components/androidtv/_androidtv/androidtv/__init__.py": {
+      "origin": "library",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_path": "androidtv/androidtv/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custom_components/androidtv/_androidtv/androidtv/androidtv_async.py": {
+      "origin": "library",
+      "sha256": "478f27bed3ecc799e6e3e3bcbd786fd65b4c25e82f14d8d45b69e50fbce9e996",
+      "source_path": "androidtv/androidtv/androidtv_async.py",
+      "source_sha256": "478f27bed3ecc799e6e3e3bcbd786fd65b4c25e82f14d8d45b69e50fbce9e996"
+    },
+    "custom_components/androidtv/_androidtv/androidtv/androidtv_sync.py": {
+      "origin": "library",
+      "sha256": "453539f9f27469a0b1306876fcf9610099de99a0c4088082e61843e3e45765ff",
+      "source_path": "androidtv/androidtv/androidtv_sync.py",
+      "source_sha256": "453539f9f27469a0b1306876fcf9610099de99a0c4088082e61843e3e45765ff"
+    },
+    "custom_components/androidtv/_androidtv/androidtv/base_androidtv.py": {
+      "origin": "library",
+      "sha256": "4c02458fa5663cae2143733961d6d372737d3fd26b074043ecd27878dbdc2a04",
+      "source_path": "androidtv/androidtv/base_androidtv.py",
+      "source_sha256": "4c02458fa5663cae2143733961d6d372737d3fd26b074043ecd27878dbdc2a04"
+    },
+    "custom_components/androidtv/_androidtv/basetv/__init__.py": {
+      "origin": "library",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_path": "androidtv/basetv/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custom_components/androidtv/_androidtv/basetv/basetv.py": {
+      "origin": "library",
+      "sha256": "99152be6823eadf29a2b6eaf5b4803a5544de88a5556b6e36a7228c255f5e512",
+      "source_path": "androidtv/basetv/basetv.py",
+      "source_sha256": "99152be6823eadf29a2b6eaf5b4803a5544de88a5556b6e36a7228c255f5e512"
+    },
+    "custom_components/androidtv/_androidtv/basetv/basetv_async.py": {
+      "origin": "library",
+      "sha256": "16bc1e2c6639d136084f3fdcb33d520d07c68645d72471e5cdf7b0b2a8b43ba5",
+      "source_path": "androidtv/basetv/basetv_async.py",
+      "source_sha256": "16bc1e2c6639d136084f3fdcb33d520d07c68645d72471e5cdf7b0b2a8b43ba5"
+    },
+    "custom_components/androidtv/_androidtv/basetv/basetv_sync.py": {
+      "origin": "library",
+      "sha256": "66aac1ea69e00d11054a6da694a06a7d2c9223328191dbf035542d5f1e475045",
+      "source_path": "androidtv/basetv/basetv_sync.py",
+      "source_sha256": "66aac1ea69e00d11054a6da694a06a7d2c9223328191dbf035542d5f1e475045"
+    },
+    "custom_components/androidtv/_androidtv/constants.py": {
+      "origin": "library",
+      "sha256": "c264c60aa007a04cac09ae8073259df405276c5df7f8cc79f8ad0c5914872d74",
+      "source_path": "androidtv/constants.py",
+      "source_sha256": "c264c60aa007a04cac09ae8073259df405276c5df7f8cc79f8ad0c5914872d74"
+    },
+    "custom_components/androidtv/_androidtv/exceptions.py": {
+      "origin": "library",
+      "sha256": "cabb6f6afad2083037c597a0ef2a15b24e1a6d642df370dbcc35125a30052e88",
+      "source_path": "androidtv/exceptions.py",
+      "source_sha256": "cabb6f6afad2083037c597a0ef2a15b24e1a6d642df370dbcc35125a30052e88"
+    },
+    "custom_components/androidtv/_androidtv/firetv/__init__.py": {
+      "origin": "library",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_path": "androidtv/firetv/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "custom_components/androidtv/_androidtv/firetv/base_firetv.py": {
+      "origin": "library",
+      "sha256": "d04aed086a428adc17d339b11db6e0bafaf6ac52ee953e242e3af74ec84287df",
+      "source_path": "androidtv/firetv/base_firetv.py",
+      "source_sha256": "d04aed086a428adc17d339b11db6e0bafaf6ac52ee953e242e3af74ec84287df"
+    },
+    "custom_components/androidtv/_androidtv/firetv/firetv_async.py": {
+      "origin": "library",
+      "sha256": "c6559a96b7ab970c9e205fc1ac2ea022373fb881d3dd5a56f878527c464952fb",
+      "source_path": "androidtv/firetv/firetv_async.py",
+      "source_sha256": "c6559a96b7ab970c9e205fc1ac2ea022373fb881d3dd5a56f878527c464952fb"
+    },
+    "custom_components/androidtv/_androidtv/firetv/firetv_sync.py": {
+      "origin": "library",
+      "sha256": "6c5db17f325334daafc46dbeab18d61e45b5f197d37d5cfaaa3a7909f854efb3",
+      "source_path": "androidtv/firetv/firetv_sync.py",
+      "source_sha256": "6c5db17f325334daafc46dbeab18d61e45b5f197d37d5cfaaa3a7909f854efb3"
+    },
+    "custom_components/androidtv/_androidtv/setup_async.py": {
+      "origin": "library",
+      "sha256": "fb1672c7e1c7a60b481c1f4663e81737aecd0b42891c944916bff2dc1cc31955",
+      "source_path": "androidtv/setup_async.py",
+      "source_sha256": "fb1672c7e1c7a60b481c1f4663e81737aecd0b42891c944916bff2dc1cc31955"
+    },
+    "custom_components/androidtv/config_flow.py": {
+      "origin": "ha",
+      "sha256": "bd7f376b130b0e192b5081aa80ce94cf5fa2e5cc94b79e8fc8e7923a61e94c43",
+      "source_path": "homeassistant/components/androidtv/config_flow.py",
+      "source_sha256": "b10f6b6a00261f52797fa4959fad80dd83a128615565d71414dd06d797212bb1"
+    },
+    "custom_components/androidtv/const.py": {
+      "origin": "ha",
+      "sha256": "868592ffd9e630a82832cc0c13adb7b3919aee3df27bc433f928d389cbd62229",
+      "source_path": "homeassistant/components/androidtv/const.py",
+      "source_sha256": "868592ffd9e630a82832cc0c13adb7b3919aee3df27bc433f928d389cbd62229"
+    },
+    "custom_components/androidtv/diagnostics.py": {
+      "origin": "ha",
+      "sha256": "a7419ae778e43bf90e2af6f7c90c0902f3565b1f2074ebf7a87bfce303e25bb8",
+      "source_path": "homeassistant/components/androidtv/diagnostics.py",
+      "source_sha256": "a7419ae778e43bf90e2af6f7c90c0902f3565b1f2074ebf7a87bfce303e25bb8"
+    },
+    "custom_components/androidtv/entity.py": {
+      "origin": "ha",
+      "sha256": "d6c8c720efe4abe2f05f1c2937447ffb0a7aa3c84243c6b172a1a886128d4361",
+      "source_path": "homeassistant/components/androidtv/entity.py",
+      "source_sha256": "677504f0301e11ee30e0137b66f16ab43767e01643e30432f2c1dacfd5cb32c4"
+    },
+    "custom_components/androidtv/icons.json": {
+      "origin": "ha",
+      "sha256": "22a682a1a646cb8ebdef4f83dff58f82330c79223fbbb44ab1e3ca3941df8ddb",
+      "source_path": "homeassistant/components/androidtv/icons.json",
+      "source_sha256": "22a682a1a646cb8ebdef4f83dff58f82330c79223fbbb44ab1e3ca3941df8ddb"
+    },
+    "custom_components/androidtv/manifest.json": {
+      "origin": "ha",
+      "sha256": "c8999d4e8744a55399cb12199d9783cf6d3579b659dc169c8f1125425df8dfdb",
+      "source_path": "homeassistant/components/androidtv/manifest.json",
+      "source_sha256": "c7b6412039ee1bc6c6fa2b4d61378393d05a192f15f3a4aaf6c948824dd719a8"
+    },
+    "custom_components/androidtv/media_player.py": {
+      "origin": "ha",
+      "sha256": "1bd6e212276cd48253955cf73f88f70e91b44be203b9c073a829c4dd69bb69a5",
+      "source_path": "homeassistant/components/androidtv/media_player.py",
+      "source_sha256": "612a342009124c96f9e0ffa7781f7d0b4a032df88d15d2f18d1c751e4ab501ad"
+    },
+    "custom_components/androidtv/remote.py": {
+      "origin": "ha",
+      "sha256": "5d64bdc9220d6df7ff5ffabe6b146985de9a33990f69015e06f173e40b059c1c",
+      "source_path": "homeassistant/components/androidtv/remote.py",
+      "source_sha256": "c0e1dfa237acb7979256eee3e883fe01b099b79caedb73626c6a35d63d362fd7"
+    },
+    "custom_components/androidtv/services.py": {
+      "origin": "ha",
+      "sha256": "e137940f9aa06740217e1361bdc499ae8934ef349d25231c55b57a4dfd6f00d1",
+      "source_path": "homeassistant/components/androidtv/services.py",
+      "source_sha256": "e137940f9aa06740217e1361bdc499ae8934ef349d25231c55b57a4dfd6f00d1"
+    },
+    "custom_components/androidtv/services.yaml": {
+      "origin": "ha",
+      "sha256": "ce2416dd2bc104803cd4112274c16706bd0ce6f926ea893bee1141d41d7fd148",
+      "source_path": "homeassistant/components/androidtv/services.yaml",
+      "source_sha256": "ce2416dd2bc104803cd4112274c16706bd0ce6f926ea893bee1141d41d7fd148"
+    },
+    "custom_components/androidtv/translations/en.json": {
+      "origin": "ha_translation",
+      "sha256": "2195919a6cbc44f268dbce4b67e4b6a39569da5a292e7e5d1f055e7f4d652c5f",
+      "source_path": "en",
+      "source_sha256": "2195919a6cbc44f268dbce4b67e4b6a39569da5a292e7e5d1f055e7f4d652c5f"
+    },
+    "custom_components/androidtv/translations/fr.json": {
+      "origin": "ha_translation",
+      "sha256": "bdd3e6bc0fbe21ff254f9191a3b1b2dab16942b22fe244580c23d5749d63604d",
+      "source_path": "fr",
+      "source_sha256": "bdd3e6bc0fbe21ff254f9191a3b1b2dab16942b22fe244580c23d5749d63604d"
+    },
+    "tests/fixtures/sony_android10.json": {
+      "origin": "fixture",
+      "sha256": "cb3ed7f666f92d939f36a1158ed9788df26af95a85d43b732db08f0885e15961",
+      "source_path": "tests/fixtures/sony_android10.json",
+      "source_sha256": "cb3ed7f666f92d939f36a1158ed9788df26af95a85d43b732db08f0885e15961"
+    },
+    "tests/fixtures/sony_android10_audio.json": {
+      "origin": "fixture",
+      "sha256": "64837fb04bfae3e5ead597d521bbde69e670b55fb85e07c29638b63fe56ad29a",
+      "source_path": "tests/fixtures/sony_android10_audio.json",
+      "source_sha256": "64837fb04bfae3e5ead597d521bbde69e670b55fb85e07c29638b63fe56ad29a"
+    },
+    "tests/fixtures/sony_android10_playback.json": {
+      "origin": "fixture",
+      "sha256": "9db316224b829ca8ff430bb09180eca2f3a76fcb2d875e09befa33aa18992885",
+      "source_path": "tests/fixtures/sony_android10_playback.json",
+      "source_sha256": "9db316224b829ca8ff430bb09180eca2f3a76fcb2d875e09befa33aa18992885"
+    }
+  },
+  "home_assistant": {
+    "commit": "357cae5c598dfcd7a0ea7dc5b1facccd4ec6037b",
+    "repository": "home-assistant/core",
+    "version": "2026.10.4"
+  },
+  "translation_image": "ghcr.io/home-assistant/home-assistant:2026.10.4@sha256:23f4dfbb69ce76315dbc4de7915504f1c2dcecd7ca2648113a493a385972e133"
+}

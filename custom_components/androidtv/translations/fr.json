@@ -1,0 +1,126 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'appareil est d\u00e9j\u00e0 configur\u00e9",
+            "invalid_unique_id": "Impossible de d\u00e9terminer un identifiant unique valide pour l'appareil"
+        },
+        "error": {
+            "adbkey_not_file": "Fichier de cl\u00e9 ADB introuvable",
+            "cannot_connect": "\u00c9chec de la connexion",
+            "invalid_host": "Nom d'h\u00f4te ou adresse IP non valide",
+            "key_and_server": "Fournissez uniquement la cl\u00e9 ADB ou le serveur ADB",
+            "unknown": "Erreur inattendue"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "device_class": "Le type d'appareil",
+                    "host": "H\u00f4te",
+                    "port": "Port"
+                },
+                "sections": {
+                    "more_options": {
+                        "data": {
+                            "adb_server_ip": "Adresse IP du serveur ADB (laisser vide pour ne pas utiliser)",
+                            "adb_server_port": "Port du serveur ADB",
+                            "adbkey": "Chemin d'acc\u00e8s \u00e0 votre fichier de cl\u00e9 ADB (laisser vide pour g\u00e9n\u00e9rer automatiquement)"
+                        },
+                        "name": "Plus d'options"
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "failed_send": {
+            "message": "\u00c9chec de l'envoi de la commande {cmd}"
+        }
+    },
+    "options": {
+        "error": {
+            "invalid_det_rules": "R\u00e8gles de d\u00e9tection d'\u00e9tat non valides"
+        },
+        "step": {
+            "apps": {
+                "data": {
+                    "app_delete": "Cochez pour supprimer cette application",
+                    "app_id": "ID d'application",
+                    "app_name": "Nom de l'application"
+                },
+                "description": "Configurer l'ID d'application {app_id}",
+                "title": "Configurer les applications Android"
+            },
+            "init": {
+                "data": {
+                    "apps": "Configurer la liste des applications",
+                    "exclude_unnamed_apps": "Exclure les applications dont le nom est inconnu de la liste des sources",
+                    "get_sources": "R\u00e9cup\u00e9rer les applications en cours d'ex\u00e9cution comme liste de sources",
+                    "screencap_interval": "Intervalle en minutes entre les captures d'\u00e9cran pour les pochettes d'album (mettre 0 pour d\u00e9sactiver)",
+                    "state_detection_rules": "Configurer les r\u00e8gles de d\u00e9tection d'\u00e9tat",
+                    "turn_off_command": "Commande shell ADB pour \u00e9teindre (laisser vide pour utiliser la valeur par d\u00e9faut)",
+                    "turn_on_command": "Commande shell ADB pour allumer (laisser vide pour utiliser la valeur par d\u00e9faut)"
+                }
+            },
+            "rules": {
+                "data": {
+                    "rule_delete": "Cochez pour supprimer cette r\u00e8gle",
+                    "rule_id": "ID d'application",
+                    "rule_values": "Liste des r\u00e8gles de d\u00e9tection d'\u00e9tat (voir documentation)"
+                },
+                "description": "Configurer la r\u00e8gle de d\u00e9tection pour l'ID d'application {rule_id}",
+                "title": "Configurer les r\u00e8gles de d\u00e9tection d'\u00e9tat Android"
+            }
+        }
+    },
+    "selector": {
+        "device_class": {
+            "options": {
+                "auto": "D\u00e9tection automatique du type d'appareil"
+            }
+        }
+    },
+    "services": {
+        "adb_command": {
+            "description": "Envoie une commande ADB \u00e0 un appareil Android / Fire TV.",
+            "fields": {
+                "command": {
+                    "description": "Un bouton ou une commande shell ADB.",
+                    "name": "Commande"
+                }
+            },
+            "name": "Envoyer une commande ADB"
+        },
+        "download": {
+            "description": "T\u00e9l\u00e9charge un fichier depuis votre appareil Android / Fire TV vers votre instance Home Assistant.",
+            "fields": {
+                "device_path": {
+                    "description": "Chemin d'acc\u00e8s au fichier sur l'appareil Android / Fire TV.",
+                    "name": "Chemin d'acc\u00e8s de l'appareil"
+                },
+                "local_path": {
+                    "description": "Chemin d'acc\u00e8s au fichier sur votre instance de Home Assistant.",
+                    "name": "Chemin d'acc\u00e8s local"
+                }
+            },
+            "name": "T\u00e9l\u00e9charger"
+        },
+        "learn_sendevent": {
+            "description": "Traduit un appui sur un bouton de la t\u00e9l\u00e9commande en commandes ADB \u00ab\u00a0sendevent\u00a0\u00bb. Vous devez appuyer sur un bouton de la t\u00e9l\u00e9commande dans les 8 secondes suivant l'ex\u00e9cution de cette action.",
+            "name": "Apprendre un sendevent"
+        },
+        "upload": {
+            "description": "Transf\u00e8re un fichier de votre instance Home Assistant vers un appareil Android / Fire TV.",
+            "fields": {
+                "device_path": {
+                    "description": "Chemin d'acc\u00e8s au fichier sur l'appareil Android / Fire TV.",
+                    "name": "Chemin d'acc\u00e8s de l'appareil"
+                },
+                "local_path": {
+                    "description": "Chemin d'acc\u00e8s au fichier sur votre instance de Home Assistant.",
+                    "name": "Chemin d'acc\u00e8s local"
+                }
+            },
+            "name": "T\u00e9l\u00e9verser"
+        }
+    }
+}

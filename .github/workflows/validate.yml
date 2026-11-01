@@ -1,0 +1,24 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Verify imported sources
+        run: python3 scripts/sync_upstream.py --check
+      - name: Validate Compose configuration
+        run: docker compose config --quiet
+      - name: Run Home Assistant integration tests
+        run: docker compose --profile test run --rm tests
